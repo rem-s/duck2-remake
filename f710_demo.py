@@ -4,7 +4,6 @@ import os
 import time
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
-
 pygame.joystick.init()
 DEVICE = "Logitech Gamepad F710" 
 

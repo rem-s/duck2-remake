@@ -33,6 +33,7 @@ class F710(object):
 
   def __init__(self, auto_detect=True, device_num=0):
     os.environ["SDL_VIDEODRIVER"] = "dummy"
+    pygame.display.init()
     pygame.joystick.init()
 
     if auto_detect == True:
@@ -53,11 +54,12 @@ class F710(object):
     pygame.joystick.quit()
 
   def get_status(self, button):
+    pygame.event.pump()
     event, num = button
-    if event == AXIS:
+    if event == F710.AXIS:
       return self.device.get_axis(num)
-    elif event == BUTTON:
+    elif event == F710.BUTTON:
       return self.device.get_button(num)
-    elif event == HAT:
+    elif event == F710.HAT:
       return self.device.get_hat(num)
 
