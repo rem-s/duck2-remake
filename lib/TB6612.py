@@ -1,4 +1,4 @@
-import Jetson.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 class TB6612(object):
   # 0b<IN1><IN2><PWM><STBY>
